@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mirfakhrai TMS Consulting — Launch your TMS practice with confidence</title>
+<meta name="description" content="Expert TMS clinic launch and operations consulting. Workflow design, insurance authorization, technician training, and protocol build from a practitioner who has done it at scale." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Mirfakhrai TMS Consulting" />
+<meta property="og:description" content="Launch your TMS practice with confidence. Clinical operations, insurance, and training — done right." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts: editorial serif + refined sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300..700&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --bg: #f5f1ea;
+  --bg-card: #fbf8f2;
+  --ink: #0f1a2e;
+  --ink-soft: #3a4356;
+  --ink-mute: #6b7384;
+  --accent: #b8874a;
+  --accent-deep: #8a6332;
+  --line: #d9d0bf;
+  --line-soft: #e8e0cf;
+  --success: #2d6a4f;
+  --radius: 2px;
+  --max: 1240px;
+  --serif: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'Inter Tight', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 2rem; position: relative; }
+
+/* =================== NAV =================== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.25rem 0;
+  background: rgba(245, 241, 234, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, padding 0.3s ease;
+}
+nav.scrolled { border-bottom-color: var(--line); padding: 0.9rem 0; }
+nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+.logo .accent { color: var(--accent); font-style: italic; font-weight: 400; }
+.nav-links { display: flex; gap: 2.5rem; align-items: center; }
+.nav-links a { color: var(--ink-soft); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent-deep); }
+.nav-cta {
+  background: var(--ink); color: var(--bg); padding: 0.7rem 1.5rem;
+  border-radius: var(--radius); font-size: 0.85rem; letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta:hover { background: var(--accent-deep); color: var(--bg) !important; transform: translateY(-1px); }
+@media (max-width: 768px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+
+/* =================== HERO =================== */
+.hero {
+  padding: 10rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent-deep); margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.eyebrow::before {
+  content: ''; display: block; width: 24px; height: 1px; background: var(--accent);
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+  line-height: 1.02;
+  font-weight: 340;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-deep);
+  font-variation-settings: "opsz" 144;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.cta-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  background: var(--ink); color: var(--bg);
+  padding: 1rem 1.75rem; border: none; font: inherit; font-size: 0.95rem;
+  font-weight: 500; letter-spacing: 0.01em; cursor: pointer;
+  text-decoration: none; border-radius: var(--radius);
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  transition: background 0.3s, transform 0.2s;
+  position: relative; overflow: hidden;
+}
+.btn-primary::after {
+  content: ''; position: absolute; inset: 0;
+  background: var(--accent-deep);
+  transform: translateX(-101%); transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  z-index: 0;
+}
+.btn-primary:hover::after { transform: translateX(0); }
+.btn-primary span, .btn-primary svg { position: relative; z-index: 1; }
+.btn-primary svg { transition: transform 0.3s; }
+.btn-primary:hover svg { transform: translateX(3px); }
+
+.btn-ghost {
+  color: var(--ink); padding: 1rem 0.25rem; text-decoration: none;
+  font-size: 0.95rem; font-weight: 500;
+  border-bottom: 1px solid var(--line); transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent-deep); }
+
+/* Hero visual / credentials card */
+.hero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 2.5rem;
+  position: relative;
+  transform: rotate(0.4deg);
+  box-shadow: 0 30px 60px -30px rgba(15, 26, 46, 0.15);
+}
+.hero-card::before {
+  content: ''; position: absolute; inset: 8px;
+  border: 1px solid var(--line-soft); pointer-events: none;
+}
+.card-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 1rem; }
+.card-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; line-height: 1.25; margin-bottom: 1.5rem; color: var(--ink); }
+.card-meta { display: flex; flex-direction: column; gap: 0.9rem; padding-top: 1.5rem; border-top: 1px solid var(--line-soft); }
+.card-meta div { display: flex; justify-content: space-between; font-size: 0.9rem; }
+.card-meta span:first-child { color: var(--ink-mute); }
+.card-meta span:last-child { color: var(--ink); font-weight: 500; }
+
+/* Trust bar */
+.trust {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+}
+.trust-label {
+  font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); font-weight: 500;
+}
+.trust-items { display: flex; flex-wrap: wrap; gap: 2.5rem; font-family: var(--serif); font-size: 1.05rem; color: var(--ink-soft); font-weight: 400; }
+.trust-items span { position: relative; }
+
+/* =================== SECTIONS =================== */
+section { padding: 7rem 0; position: relative; z-index: 2; }
+.section-head { margin-bottom: 4rem; display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: end; }
+@media (max-width: 820px) { .section-head { grid-template-columns: 1fr; gap: 1.5rem; } }
+.section-number { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--accent-deep); }
+.section-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 340; line-height: 1.1; letter-spacing: -0.02em; }
+.section-title em { font-style: italic; color: var(--accent-deep); font-weight: 300; }
+
+/* =================== PROBLEM SECTION =================== */
+.problem { background: var(--ink); color: var(--bg); position: relative; }
+.problem .section-number { color: #c79a5b; }
+.problem .section-title { color: var(--bg); }
+.problem .section-title em { color: #d4a968; }
+.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #1a263d; border: 1px solid #1a263d; }
+@media (max-width: 820px) { .problem-grid { grid-template-columns: 1fr; } }
+.problem-item {
+  background: var(--ink); padding: 2.5rem;
+  transition: background 0.3s;
+}
+.problem-item:hover { background: #141f36; }
+.problem-num { font-family: var(--serif); font-size: 2.2rem; font-weight: 300; color: #c79a5b; font-style: italic; margin-bottom: 1rem; }
+.problem-item h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; line-height: 1.25; }
+.problem-item p { color: #a8b3c7; font-size: 0.95rem; line-height: 1.6; }
+
+/* =================== SERVICES =================== */
+.services-list { display: flex; flex-direction: column; }
+.service {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 80px 1fr 1.5fr auto;
+  gap: 3rem;
+  align-items: start;
+  position: relative;
+  transition: padding 0.3s ease;
+  cursor: default;
+}
+.service:hover { padding-left: 1rem; }
+.service:hover .service-arrow { opacity: 1; transform: translateX(0); }
+.service:last-child { border-bottom: 1px solid var(--line); }
+@media (max-width: 820px) { .service { grid-template-columns: 1fr; gap: 0.75rem; padding: 2rem 0; } .service:hover { padding-left: 0; } }
+
+.service-num { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--accent-deep); padding-top: 0.4rem; }
+.service-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; }
+.service-desc { color: var(--ink-soft); font-size: 0.98rem; line-height: 1.6; padding-top: 0.4rem; }
+.service-price { font-family: var(--serif); font-size: 1rem; font-style: italic; color: var(--ink-mute); padding-top: 0.4rem; white-space: nowrap; }
+.service-price strong { font-style: normal; color: var(--ink); font-weight: 500; font-family: var(--sans); font-size: 1rem; }
+.service-arrow { position: absolute; left: -1rem; top: 3rem; opacity: 0; transform: translateX(-10px); transition: all 0.3s; color: var(--accent); }
+
+/* =================== PROCESS =================== */
+.process { background: var(--bg-card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+@media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
+.step { padding: 2rem; border-right: 1px solid var(--line-soft); position: relative; }
+.step:last-child { border-right: none; }
+@media (max-width: 820px) { .step { border-right: none; border-bottom: 1px solid var(--line-soft); } .step:last-child { border-bottom: none; } }
+.step-num {
+  font-family: var(--serif); font-size: 3.5rem; font-weight: 300; font-style: italic;
+  color: var(--accent); line-height: 1; margin-bottom: 1.5rem; display: block;
+}
+.step h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.75rem; }
+.step p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; }
+
+/* =================== ABOUT =================== */
+.about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+.about-portrait {
+  position: relative;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+}
+.about-portrait::before {
+  content: ''; position: absolute; inset: -8px; border: 1px solid var(--accent); z-index: -1; pointer-events: none;
+}
+.about-monogram {
+  font-family: var(--serif); font-size: 8rem; font-style: italic; font-weight: 300;
+  color: var(--ink); text-align: center; line-height: 1;
+  padding: 3rem 0; border-bottom: 1px solid var(--line);
+}
+.about-monogram .accent { color: var(--accent); }
+.about-name { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; margin-top: 1.5rem; text-align: center; }
+.about-role { color: var(--ink-mute); font-size: 0.88rem; text-align: center; margin-top: 0.25rem; letter-spacing: 0.05em; }
+
+.about-text p { font-size: 1.05rem; line-height: 1.7; color: var(--ink-soft); margin-bottom: 1.25rem; }
+.about-text p:first-child { font-family: var(--serif); font-size: 1.4rem; line-height: 1.45; color: var(--ink); font-weight: 400; margin-bottom: 2rem; }
+.about-text p:first-child::first-letter {
+  font-size: 3.5rem; float: left; line-height: 0.9; padding-right: 0.5rem; padding-top: 0.3rem;
+  font-weight: 400; color: var(--accent-deep);
+}
+
+.credentials { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.credential { font-size: 0.88rem; }
+.credential-label { color: var(--ink-mute); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.credential-value { color: var(--ink); font-weight: 500; font-family: var(--serif); font-size: 1.05rem; }
+
+/* =================== FAQ =================== */
+.faq-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-q {
+  width: 100%; background: none; border: none; text-align: left;
+  padding: 1.75rem 0; font: inherit;
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--ink);
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--accent-deep); }
+.faq-q span.plus { font-family: var(--sans); font-size: 1.3rem; font-weight: 300; color: var(--accent-deep); transition: transform 0.3s; line-height: 1; }
+.faq-item.open .plus { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.5, 0, 0.3, 1), padding 0.3s;
+  color: var(--ink-soft); font-size: 0.98rem; line-height: 1.7;
+}
+.faq-item.open .faq-a { max-height: 400px; padding-bottom: 1.75rem; }
+
+/* =================== CONTACT =================== */
+.contact { background: var(--ink); color: var(--bg); }
+.contact .section-title { color: var(--bg); }
+.contact .section-title em { color: #d4a968; }
+.contact .section-number { color: #c79a5b; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+@media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
+.contact-lead { font-size: 1.1rem; line-height: 1.65; color: #c7cfdd; margin-bottom: 2.5rem; }
+.contact-detail { padding: 1rem 0; border-bottom: 1px solid #2a3552; }
+.contact-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a94aa; margin-bottom: 0.4rem; }
+.contact-value { color: var(--bg); font-size: 1.05rem; font-family: var(--serif); }
+.contact-value a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.contact-value a:hover { border-bottom-color: #d4a968; }
+
+form { display: flex; flex-direction: column; gap: 1.25rem; }
+.field { display: flex; flex-direction: column; gap: 0.5rem; }
+.field label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8a94aa; }
+.field input, .field select, .field textarea {
+  background: transparent;
+  border: none; border-bottom: 1px solid #3a4668;
+  padding: 0.75rem 0; font: inherit; color: var(--bg);
+  font-size: 1rem; font-family: var(--sans);
+  transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-bottom-color: #d4a968;
+}
+.field textarea { resize: vertical; min-height: 80px; }
+.field select option { background: var(--ink); color: var(--bg); }
+
+.submit-btn {
+  margin-top: 1rem; background: #d4a968; color: var(--ink);
+  padding: 1.1rem 2rem; border: none; font: inherit;
+  font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em;
+  cursor: pointer; border-radius: var(--radius);
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.7rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.submit-btn:hover { background: #e5b876; transform: translateY(-1px); }
+.submit-btn svg { transition: transform 0.3s; }
+.submit-btn:hover svg { transform: translateX(3px); }
+.form-success {
+  margin-top: 1rem; padding: 1rem; background: rgba(212, 169, 104, 0.1);
+  border-left: 2px solid #d4a968; color: var(--bg); font-size: 0.92rem;
+  display: none;
+}
+.form-success.show { display: block; }
+
+/* =================== FOOTER =================== */
+footer { padding: 3rem 0; background: var(--ink); border-top: 1px solid #2a3552; color: #8a94aa; font-size: 0.85rem; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+footer a { color: #c7cfdd; text-decoration: none; }
+footer a:hover { color: #d4a968; }
+
+/* =================== REVEAL ANIMATIONS =================== */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.3, 0, 0.2, 1), transform 0.9s cubic-bezier(0.3, 0, 0.2, 1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* Hero intro animation */
+@keyframes riseIn { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+.hero .eyebrow, .hero h1, .hero .lead, .hero .cta-row, .hero .hero-card, .hero .trust {
+  opacity: 0; animation: riseIn 1s cubic-bezier(0.3, 0, 0.2, 1) forwards;
+}
+.hero .eyebrow { animation-delay: 0.1s; }
+.hero h1 { animation-delay: 0.2s; }
+.hero .lead { animation-delay: 0.4s; }
+.hero .cta-row { animation-delay: 0.55s; }
+.hero .hero-card { animation-delay: 0.65s; }
+.hero .trust { animation-delay: 0.85s; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<nav id="nav">
+  <div class="wrap">
+    <a href="#" class="logo">Mirfakhrai <span class="accent">TMS</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">TMS Clinical Operations Consulting</div>
+        <h1>Launch your TMS practice with <em>clinical precision</em>—not costly guesswork.</h1>
+        <p class="lead">
+          Most new TMS programs stall on insurance authorization, workflow design, or technician training. I help psychiatry practices go from machine purchase to first reimbursed patient—fast, compliant, and profitable.
+        </p>
+        <div class="cta-row">
+          <a href="#contact" class="btn-primary">
+            <span>Schedule a discovery call</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#services" class="btn-ghost">See services</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="card-label">Engagement Summary</div>
+        <div class="card-title">From machine delivery to first billable session in as few as 6 weeks.</div>
+        <div class="card-meta">
+          <div><span>Scope</span> <span>Full clinic launch</span></div>
+          <div><span>Platforms</span> <span>NeuroStar · Brainsway</span></div>
+          <div><span>Deliverables</span> <span>Workflows · Training · Auth</span></div>
+          <div><span>Engagement</span> <span>4–8 weeks</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust">
+      <div class="trust-label">Practitioner Background</div>
+      <div class="trust-items">
+        <span>UC San Diego Health</span>
+        <span>CalTMS</span>
+        <span>NeuroStar Certified</span>
+        <span>Brainsway Certified</span>
+        <span>HIPAA Certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PROBLEM =================== -->
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-number">01 — The Problem</div>
+      <h2 class="section-title">A TMS machine on the floor is not a <em>TMS program</em>.</h2>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-item reveal">
+        <div class="problem-num">i.</div>
+        <h3>Insurance authorization is the silent killer</h3>
+        <p>Most practices lose 3–6 months of revenue on denied or delayed auths because their intake, documentation, and appeal workflows weren't built for TMS-specific payer rules.</p>
+      </div>
+      <div class="problem-item reveal reveal-delay-1">
+        <div class="problem-num">ii.</div>
+        <h3>Untrained technicians hurt outcomes</h3>
+        <p>Motor threshold determination, coil placement, and session documentation require real clinical competence. Mistakes show up as side effects, non-response, and protocol drift.</p>
+      </div>
+      <div class="problem-item reveal reveal-delay-2">
+        <div class="problem-num">iii.</div>
+        <h3>Workflows built for meds don't work for TMS</h3>
+        <p>A 30-session treatment course over 6–8 weeks demands scheduling, tracking, and outcome measurement systems most psychiatry practices simply don't have yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SERVICES =================== -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-number">02 — Services</div>
+      <h2 class="section-title">Scoped engagements designed for <em>measurable outcomes.</em></h2>
+    </div>
+
+    <div class="services-list">
+      <div class="service reveal">
+        <div class="service-num">S/01</div>
+        <div>
+          <div class="service-title">Full Clinic Launch Package</div>
+        </div>
+        <div class="service-desc">End-to-end setup: vendor advisory, facility requirements, technician hiring and training, payer credentialing support, intake and treatment workflows, documentation templates, and first-patient motor threshold mapping.</div>
+        <div class="service-price"><strong>From $9,500</strong><br>4–6 week engagement</div>
+        <div class="service-arrow">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">S/02</div>
+        <div>
+          <div class="service-title">Technician Training & Certification Prep</div>
+        </div>
+        <div class="service-desc">On-site or remote training for new and existing technicians: device operation (NeuroStar or Brainsway), motor threshold determination, patient positioning, outcome questionnaires, documentation, and safety protocols.</div>
+        <div class="service-price"><strong>$1,200 / day on-site</strong><br>$200 / hour remote</div>
+        <div class="service-arrow">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">S/03</div>
+        <div>
+          <div class="service-title">Insurance Authorization Retainer</div>
+        </div>
+        <div class="service-desc">Monthly support on prior auths, appeals, payer-specific documentation, and letter of medical necessity templates. Designed for practices processing 20+ TMS patients per month.</div>
+        <div class="service-price"><strong>From $1,800 / month</strong><br>Minimum 3-month retainer</div>
+        <div class="service-arrow">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">S/04</div>
+        <div>
+          <div class="service-title">Operations Audit & Optimization</div>
+        </div>
+        <div class="service-desc">For existing TMS programs that aren't hitting capacity. Deep review of scheduling, technician workflow, documentation, billing, and outcomes tracking—with a written remediation plan.</div>
+        <div class="service-price"><strong>$2,800 flat</strong><br>Delivered in 2 weeks</div>
+        <div class="service-arrow">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PROCESS =================== -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-number">03 — How it works</div>
+      <h2 class="section-title">A clear path from discovery call to <em>first billed patient.</em></h2>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-num">i</span>
+        <h3>Discovery call</h3>
+        <p>30 minutes, no cost. We map your current state, goals, timeline, and whether we're a fit. If yes, I send a scoped proposal within 48 hours.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <span class="step-num">ii</span>
+        <h3>Scope & kickoff</h3>
+        <p>Fixed-fee engagement signed. Project plan shared with weekly checkpoints. Clinical and administrative stakeholders aligned from week one.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <span class="step-num">iii</span>
+        <h3>Build & train</h3>
+        <p>Workflows configured. Technicians trained. Insurance templates prepared. Every deliverable documented so your team owns it after I leave.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <span class="step-num">iv</span>
+        <h3>Launch & hand-off</h3>
+        <p>First patients scheduled and treated under my direct oversight. 30-day post-launch support included. You keep every protocol, template, and system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-number">04 — About</div>
+      <h2 class="section-title">Built at the chairside, not from a <em>spreadsheet.</em></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-portrait reveal">
+        <div class="about-monogram"><span class="accent">R</span>M</div>
+        <div class="about-name">Roxann Mirfakhrai</div>
+        <div class="about-role">FOUNDER · LEAD CONSULTANT</div>
+      </div>
+
+      <div class="about-text reveal reveal-delay-1">
+        <p>I've spent the last five years treating patients with TMS every day—running motor thresholds, documenting sessions, navigating insurance, and leading clinical operations at UC San Diego Health.</p>
+        <p>That hands-on experience is the point. I know how a real clinic day unfolds, where bottlenecks actually live, and which shortcuts break patient outcomes. When I help you launch or optimize a TMS program, you're getting the lived reality of running one, not a theoretical framework.</p>
+        <p>I work with a small number of clinics at a time so every engagement gets the attention it deserves.</p>
+
+        <div class="credentials">
+          <div class="credential">
+            <div class="credential-label">Certifications</div>
+            <div class="credential-value">NeuroStar · Brainsway · HIPAA</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">Clinical Experience</div>
+            <div class="credential-value">5+ years, 1,000+ sessions</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">Current Role</div>
+            <div class="credential-value">Lead TMS Tech, UCSD Health</div>
+          </div>
+          <div class="credential">
+            <div class="credential-label">Languages</div>
+            <div class="credential-value">English · Spanish</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section style="background: var(--bg-card); border-top: 1px solid var(--line);" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-number">05 — FAQ</div>
+      <h2 class="section-title">Questions most founders <em>ask first.</em></h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">I haven't bought a machine yet. Can you help me choose? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Vendor selection is part of the Clinic Launch Package. I'll walk you through the real operational tradeoffs between NeuroStar, Brainsway, and other platforms—including service contracts, reimbursement implications, and technician training requirements.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you do the work, or just advise? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Both. I'm comfortable being hands-on: training technicians in person, sitting with billing to draft appeals, running the first motor threshold on a patient. For engagements where you already have capable staff, I'll advise and review. You tell me what the clinic needs.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you work outside California? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Most engagement work is done remotely, so geography isn't a barrier. For on-site training or launch days, I travel—travel is billed at cost and scoped into the engagement upfront.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">How soon can we start? <span class="plus">+</span></button>
+        <div class="faq-a"><p>I take on a limited number of engagements at a time to maintain quality. Typical lead time is 2–4 weeks from signed proposal to kickoff. Book a discovery call and I'll tell you exactly what's open.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you offer referrals to medical directors or psychiatrists? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes—through my clinical network in Southern California. Introductions are complimentary for active consulting clients.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-number">06 — Book a call</div>
+      <h2 class="section-title">Let's see if we're a <em>good fit.</em></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="contact-lead">Tell me a bit about your practice and what you're trying to solve. I'll personally reply within one business day with next steps—whether that's a discovery call, a scoped proposal, or an honest "here's who you should talk to instead."</p>
+
+        <div class="contact-detail">
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:roxann@mirfakhraitms.com">roxann@mirfakhraitms.com</a></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value"><a href="tel:+16196426668">(619) 642-6668</a></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-label">Based in</div>
+          <div class="contact-value">San Diego, California</div>
+        </div>
+        <div class="contact-detail" style="border-bottom: none;">
+          <div class="contact-label">Response time</div>
+          <div class="contact-value">Within one business day</div>
+        </div>
+      </div>
+
+      <form class="reveal reveal-delay-1" id="contactForm" onsubmit="return handleSubmit(event)">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="field">
+          <label for="practice">Practice / Organization</label>
+          <input type="text" id="practice" name="practice" />
+        </div>
+        <div class="field">
+          <label for="stage">Where are you in the process?</label>
+          <select id="stage" name="stage" required>
+            <option value="">Select one</option>
+            <option>Exploring — haven't bought a machine</option>
+            <option>Machine purchased — not yet operating</option>
+            <option>Operating — struggling with auth or workflow</option>
+            <option>Operating — want to scale</option>
+            <option>Just looking for advice</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">What do you need help with?</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          Send inquiry
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="form-success" id="formSuccess">
+          Thanks—your message has been received. I'll reply within one business day.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="wrap">
+    <div>© <span id="year"></span> Mirfakhrai TMS Consulting · San Diego, CA</div>
+    <div><a href="#contact">Start a conversation →</a></div>
+  </div>
+</footer>
+
+<script>
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Scrolled nav
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Form handler (client-side demo — swap for real endpoint in production)
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const success = document.getElementById('formSuccess');
+
+  // TODO: Replace with real endpoint. Options:
+  //   - Formspree: fetch('https://formspree.io/f/YOUR_ID', { method: 'POST', body: new FormData(form), headers: {'Accept':'application/json'} })
+  //   - Vercel Serverless Function at /api/contact
+  //   - Netlify Forms (add netlify attribute to form)
+
+  success.classList.add('show');
+  form.reset();
+  setTimeout(() => success.classList.remove('show'), 8000);
+  return false;
+}
+</script>
+</body>
+</html>
